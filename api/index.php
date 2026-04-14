@@ -1,9 +1,10 @@
 <?php
 
-// Dynamically set APP_URL so asset() works on both production and preview URLs
+// Vercel terminates SSL at the load balancer — detect HTTPS via X-Forwarded-Proto
 if (!empty($_SERVER['HTTP_HOST'])) {
-    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    $url = $scheme . '://' . $_SERVER['HTTP_HOST'];
+    $proto  = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? ($_SERVER['HTTPS'] ?? 'http');
+    $scheme = ($proto === 'https' || $proto === 'on' || $proto === '1') ? 'https' : 'http';
+    $url    = $scheme . '://' . $_SERVER['HTTP_HOST'];
     $_ENV['APP_URL'] = $url;
     putenv('APP_URL=' . $url);
 }
