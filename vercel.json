@@ -24,6 +24,14 @@
       "dest": "/public/$1"
     },
     {
+      "src": "/hello",
+      "dest": "/api/hello.php"
+    },
+    {
+      "src": "/debug",
+      "dest": "/api/debug.php"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
