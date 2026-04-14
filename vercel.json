@@ -1,13 +1,27 @@
 {
   "version": 2,
+  "framework": null,
   "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.8.0"
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
     }
   },
   "routes": [
-    { "src": "/hello", "dest": "/api/hello.php" },
-    { "src": "/debug", "dest": "/api/debug.php" },
     { "src": "/(.*)", "dest": "/api/index.php" }
-  ]
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_KEY": "base64:RT8zw2CweHu9YQXeepPERQ8Oon1BbSy5TTjtSmL+8/4=",
+    "APP_URL": "https://koutnyin.vercel.app",
+    "APP_CONFIG_CACHE": "/tmp/config.php",
+    "APP_EVENTS_CACHE": "/tmp/events.php",
+    "APP_PACKAGES_CACHE": "/tmp/packages.php",
+    "APP_ROUTES_CACHE": "/tmp/routes.php",
+    "APP_SERVICES_CACHE": "/tmp/services.php",
+    "VIEW_COMPILED_PATH": "/tmp",
+    "CACHE_STORE": "array",
+    "SESSION_DRIVER": "cookie",
+    "LOG_CHANNEL": "stderr"
+  }
 }
