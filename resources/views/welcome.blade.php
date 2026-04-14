@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Kout Nyin MC — Kingdom Beyond the Stars</title>
 </head>
 <body>
@@ -53,7 +53,7 @@
 
             {{-- Castle backdrop --}}
             <div class="hero__bg" aria-hidden="true">
-                <img src="{{ asset('images/castle.png') }}" alt="" class="hero__bg-img">
+                <img src="/images/castle.png" alt="" class="hero__bg-img">
                 <div class="hero__bg-mist"></div>
                 <div class="hero__bg-overlay"></div>
                 <div class="hero__bg-vignette"></div>
